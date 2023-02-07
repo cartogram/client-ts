@@ -237,6 +237,8 @@ export abstract class BaseCommand extends Command {
       });
     }
 
+    const commandString = `${this.id?.replace(/:/g, ' ')} ${this.argv.join(' ')}`;
+
     this.#xataClient = new XataApiClient({ apiKey, fetch, host, clientName: 'cli' });
     return this.#xataClient;
   }
