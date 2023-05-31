@@ -34,7 +34,7 @@ import { reportBugURL } from './utils.js';
 
 export class XataClient extends buildClient({
   api: new XataApiPlugin()
-}) {}
+}) { }
 
 export type APIKeyLocation = 'shell' | 'dotenv' | 'profile' | 'new';
 
@@ -136,6 +136,7 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
 
     const moduleName = 'xata';
     const search = cosmiconfigSync(moduleName, { searchPlaces: this.searchPlaces }).search();
+    console.log('zzz search', search)
     if (search) {
       const result = partialProjectConfig.safeParse(search.config);
       if (result.success) {
@@ -609,8 +610,7 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
 
       if ('renameColumn' in operation) {
         this.log(
-          ` ${chalk.bgWhite.blue('RENAME column ')} ${operation.renameColumn.table}.${
-            operation.renameColumn.oldName
+          ` ${chalk.bgWhite.blue('RENAME column ')} ${operation.renameColumn.table}.${operation.renameColumn.oldName
           } to ${operation.renameColumn.newName}`
         );
       }
