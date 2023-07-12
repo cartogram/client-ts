@@ -1,5 +1,23 @@
 # @xata.io/importer
 
+## 1.0.0
+
+### Major Changes
+
+- [#1051](https://github.com/xataio/client-ts/pull/1051) [`02361aa1`](https://github.com/xataio/client-ts/commit/02361aa197c02267d52157daebf457d526da3e41) Thanks [@richardgill](https://github.com/richardgill)! - Rewrite of: @xata.io/importer with a new design.
+
+  CLI now uses the @xata.io/importer. Improvements:
+
+  - 2.5x performance
+  - Better column type inference
+  - Better date inference
+  - API errors are displayed in the console and written to an `error.log` file
+
+### Patch Changes
+
+- Updated dependencies [[`c1f2d264`](https://github.com/xataio/client-ts/commit/c1f2d2649e077cdffae97c90b9d2b1c75d6858fb), [`6c2c2630`](https://github.com/xataio/client-ts/commit/6c2c26308d4cbd25e7a9677c7d25c836396d4965)]:
+  - @xata.io/client@0.24.4
+
 ## 0.3.18
 
 ### Patch Changes
